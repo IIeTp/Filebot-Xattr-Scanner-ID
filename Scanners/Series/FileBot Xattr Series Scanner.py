@@ -25,17 +25,17 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None):
 
       # use series id as series name value (only supported by TheTVDB agent)
       m = re.search('com.plexapp.agents.thetvdb://([0-9]+)', guid)
-      x = re.search('com.plexapp.agents.themoviedb://([0-9]+', guid)
+      x = re.search('com.plexapp.agents.themoviedb://([0-9]+)', guid)
       y = re.search('com.plexapp.agents.hama://([0-9]+)', guid)
       
       if m:
         name = u"%s [tvdb-%05d]" % (name, int(m.group(1)))                 # TheTVDB IDs start at 70327
         year = None
       elif x:
-        name = u"%s [tmdb-%05d]" % (name, int(m.group(1)))
+        name = u"%s [tmdb-%05d]" % (name, int(x.group(1)))
         year = None
       elif y:
-        name = u"%s [anidb-%05d]" % (name, int(m.group(1))) 
+        name = u"%s [anidb-%05d]" % (name, int(y.group(1))) 
         year = None
        
       media = Media.Episode(
