@@ -21,6 +21,14 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None):
       guid = series_guid(attr)
       name = series_name(attr)
       special = episode_special_number(attr)
+      year = series_year(attr)
+
+      # use series id as series name value (only supported by TheTVDB agent)
+      m = re.search('com.plexapp.agents.thetvdb://([0-9]+)', guid)
+      if m:
+        name = "[tvdb-" u"%05d" "]" % int(m.group(1))                   # TheTVDB IDs start at 70327. now it looks like this [tvdb-260449]
+       #name = series_name(attr), "[tvdb-" u"%05d""]" % int(m.group(1)) # does not work. I want to get Vikings [tvdb-260449] as a result  
+        year = None
 
       media = Media.Episode(
         name.encode('utf-8'),                           # use str since Plex doesn't like unicode strings
