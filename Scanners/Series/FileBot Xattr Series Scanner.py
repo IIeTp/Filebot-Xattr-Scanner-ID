@@ -26,8 +26,7 @@ def Scan(path, files, mediaList, subdirs, language=None, root=None):
       # use series id as series name value (only supported by TheTVDB agent)
       m = re.search('com.plexapp.agents.thetvdb://([0-9]+)', guid)
       if m:
-        name = "[tvdb-" u"%05d" "]" % int(m.group(1))                   # TheTVDB IDs start at 70327. now it looks like this [tvdb-260449]
-       #name = series_name(attr), "[tvdb-" u"%05d""]" % int(m.group(1)) # does not work. I want to get Vikings [tvdb-260449] as a result  
+        name = name = u"%s [tvdb-%05d]" % (name, int(m.group(1)))                 # TheTVDB IDs start at 70327
         year = None
 
       media = Media.Episode(
