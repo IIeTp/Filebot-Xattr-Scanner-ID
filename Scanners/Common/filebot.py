@@ -132,7 +132,14 @@ def series_genres(attr):        return attr_get(attr, 'seriesInfo', 'genres')
 
 
 def episode_number(attr):          return attr.get('episode')
-def episode_season_number(attr):   return attr.get('season')
+#def episode_season_number(attr):   return attr.get('season')
+def episode_season_number(attr):
+  episode_season_number = attr.get('season')
+  if episode_season_number > 0:
+    return attr.get('season')
+  else: 
+    return 1
+  return None
 def episode_special_number(attr):  return attr.get('special')
 def episode_title(attr):           return attr.get('title')
 def episode_absolute_number(attr): return attr.get('absolute')
