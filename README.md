@@ -1,11 +1,12 @@
-# FileBot Xattr Metadata Scanners
+# FileBot Xattr Metadata Scanners ID
+This is a fork of the original [FileBot Xattr Metadata Scanners](https://github.com/filebot/plex-agents). For the improvement of the code, thanks go to [Reyter](https://github.com/ReyterAK).
 
 Enhance Plex with support for [FileBot Xattr Metadata](https://www.filebot.net/forums/viewtopic.php?f=3&t=324).
 
 
 ## Install
 
-1. Download the [release](https://github.com/IIeTp/Filebot-Xattr-Scanner-ID/releases)
+1. Download the [release](https://github.com/IIeTp/Filebot-Xattr-Scanners-ID/releases)
 2. Copy the `Scanners` folder into the [`Plex Media Server`](https://support.plex.tv/articles/202915258-where-is-the-plex-media-server-data-directory-located/) data directory
 3. Restart Plex
 4. Configure `Advanced ➔ Scanner` for each library and select `FileBot Xattr Scanner ID`
@@ -13,7 +14,7 @@ Enhance Plex with support for [FileBot Xattr Metadata](https://www.filebot.net/f
 #!/bin/sh -xu
 curl -L -O https://github.com/IIeTp/Filebot-Xattr-Scanner-ID/archive/master.zip
 unzip -o master.zip
-cp -vru 'Filebot-Xattr-Scanner-ID-master/Scanners' '/path/to/PlexMediaServer/Library/Plex Media Server'
+cp -vru 'Filebot-Xattr-Scanners-ID-master/Scanners' '/path/to/PlexMediaServer/Library/Plex Media Server'
 ```
 
 ## FileBot Xattr Metadata Scanner ID
