@@ -16,6 +16,6 @@ unzip -o master.zip
 cp -vru 'Filebot-Xattr-Scanner-ID-master/Scanners' '/path/to/PlexMediaServer/Library/Plex Media Server'
 ```
 
-## FileBot Xattr Metadata Scanner
+## FileBot Xattr Metadata Scanner ID
 
-The `FileBot Xattr Scanner` will read `name / year / season / episode / etc` from xattr metadata instead of guessing and parsing information from the file path. This scanner will greatly enhance primary agents such as `Plex Movie`, `TheMovieDB` or `TheTVDB`, regardless of whether files are named according to [`{plex}`](https://www.filebot.net/forums/viewtopic.php?f=5&t=4116) standards or not. Files without xattr metadata will be ignored.
+The `FileBot Xattr Scanner ID` will read `name / year / season / episode / etc` from xattr metadata instead of guessing and parsing information from the file path. This scanner will greatly enhance primary agents such as `Plex Movie`, `TheMovieDB` or `TheTVDB`, regardless of whether files are named according to [`{plex}`](https://www.filebot.net/forums/viewtopic.php?f=5&t=4116) standards or not. Files without xattr metadata will be ignored.
