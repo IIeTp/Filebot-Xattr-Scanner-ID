@@ -3,8 +3,21 @@ import Media, VideoFiles
 from filebot import *
 
 VideoFiles.ignore_dirs.remove('bdmv')
-excl_dirs = ['backup', 'clipinf', 'playlist']
+excl_dirs = ['backup', 'clipinf', 'playlist', 'certificate', 'bdjo', 'jar', '_aacs']
 VideoFiles.ignore_dirs.extend(excl_dirs)
+
+def new_movie_guid(attr):
+  imdb_id = attr.get('imdbId')
+  if imdb_id > 0:
+    return u"tt%07d" % imdb_id
+
+  tmdb_id = attr.get('tmdbId')
+  if tmdb_id > 0:
+    return u"tmdb-%s" % tmdb_id
+
+  return None
+
+movie_guid = new_movie_guid
 
 def Scan(path, files, mediaList, subdirs, language=None, root=None):
   VideoFiles.Scan(path, files, mediaList, subdirs, root)
